@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUTHERN UNIVERSITY</title>
+    <link rel="stylesheet" href="./istyle.css">
+</head>
+
+<body>
+    <div id="main">
+        <div class="navbar">
+            <img src="./2-removebg-preview.png" alt="logo">
+            <div class="user">
+                <button type="button">ABOUT US</button>
+                <img src="./3-removebg-preview.png" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div class="info">
+                <h1>DISCOVER</h1>
+                <P>Southern University and A&M College is a public historically black land-grant university in Baton
+                    Rouge, Louisiana. It is the largest historically black college or university in Louisiana, a
+                    member-school of the Thurgood Marshall College Fund, and the flagship institution of the Southern
+                    University System.</P>
+                <input type="text" placeholder="search">
+            </div>
+        </div>
+        <div class="slider">
+            <img src="./5.png" id="prev">
+            <div class="preview">
+                <img src="./6.webp" class="active thumbnail">
+                <img src="./7.jpeg" class="thumbnail">
+                <img src="./8.webp" class="thumbnail">
+                <img src="./9.webp" class="thumbnail">
+                <img src="./10.jpeg" class="thumbnail">
+
+            </div>
+            <img src="./4.png" id="next">
+        </div>
+    </div>
+    <script>
+       var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+var thumbnail = document.getElementsByClassName("thumbnail");
+var main = document.getElementById("main");
+var backgroundImage = new Array(
+    "1.jpeg",
+    "7.jpeg",
+    "8.webp",
+    "9.webp",
+    "10.jpeg"
+);
+let i = 0;
+next.onclick = function (){
+    if(i < 4){
+        main.style.backgroundImage = 'url("' + backgroundImage[i + 1]+'")';
+        thumbnail[i+1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i++;
+    }
+};
+prev.onclick = function (){
+    if(i > 0){
+        main.style.backgroundImage = 'url("' + backgroundImage[i - 1]+'")';
+        thumbnail[i - 1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i--;
+    }
+};
+
+    </script>
+</body>
+
+</html>
